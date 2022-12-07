@@ -1,7 +1,7 @@
 package com.adventOfCode.day1;
 
-import com.adventOfCode.Moduls.AoC;
-import com.adventOfCode.Moduls.Scan;
+import com.adventOfCode.Modules.AoC;
+import com.adventOfCode.Modules.Scan;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -14,50 +14,56 @@ public class Calorie implements AoC {
     private int sumOfSums;
 
     public Calorie() throws FileNotFoundException {
-        this.linie = new Scan(this.getClass()).createFileList();
+        linie = new Scan(this.getClass()).createFileList();
     }
 
     private void setSums() {
-        this.sums = new ArrayList<>();
+        sums = new ArrayList<>();
         int tempSum = 0;
-        for (String s : this.linie) {
+        for (String s : linie) {
             if (!s.matches("")) {
                 tempSum += Integer.parseInt(s);
             } else {
-                this.sums.add(tempSum);
+                sums.add(tempSum);
                 tempSum = 0;
             }
         }
     }
 
     private void setMaxValue() {
-        this.maxValue = sums.get(0);
+        maxValue = sums.get(0);
         for (Integer i : sums) {
-            if (i > this.maxValue)
-                this.maxValue = i;
+            if (i > maxValue)
+                maxValue = i;
         }
     }
 
     private void setSumOfSums() {
         int[] maxValues = new int[3];
-        this.sumOfSums = 0;
+        sumOfSums = 0;
         for (int i = 0; i < maxValues.length; i++) {
             maxValues[i] = maxValue;
-            this.sumOfSums += maxValues[i];
-            this.maxValue = 0;
-            for (Integer integer : this.sums) {
-                if (integer > this.maxValue && integer < maxValues[i])
-                    this.maxValue = integer;
+            sumOfSums += maxValues[i];
+            maxValue = 0;
+            for (Integer integer : sums) {
+                if (integer > maxValue && integer < maxValues[i])
+                    maxValue = integer;
             }
         }
     }
 
     private int getMaxValue() {
-        return this.maxValue;
+        return maxValue;
     }
 
     private int getSumOfSums() {
-        return this.sumOfSums;
+        return sumOfSums;
+    }
+
+    public void operate() {
+        setSums();
+        setMaxValue();
+        setSumOfSums();
     }
 
     @Override
@@ -70,10 +76,8 @@ public class Calorie implements AoC {
         return getSumOfSums();
     }
 
-    public void operate() {
-        setSums();
-        setMaxValue();
-        setSumOfSums();
+    @Override
+    public void execute() {
+        operate();
     }
-
 }

@@ -1,7 +1,7 @@
 package com.adventOfCode.day3;
 
-import com.adventOfCode.Moduls.AoC;
-import com.adventOfCode.Moduls.Scan;
+import com.adventOfCode.Modules.AoC;
+import com.adventOfCode.Modules.Scan;
 
 import java.io.FileNotFoundException;
 import java.util.Arrays;
@@ -17,23 +17,22 @@ public class CrazyRucksacks implements AoC {
     private int tripleRucksackSum;
 
     public CrazyRucksacks() throws FileNotFoundException {
-        this.rucksack = new Scan(this.getClass()).createFileList();
+        rucksack = new Scan(this.getClass()).createFileList();
         if (isRucksackNotCool()) {
             System.out.println("To gówno nie zadziała");
         }
         encrypt();
-        this.singleRucksackSum = 0;
-        this.tripleRucksackSum = 0;
+        singleRucksackSum = 0;
+        tripleRucksackSum = 0;
     }
 
     private void encrypt() {
-        this.priorityMap = new HashMap<>();
-
+        priorityMap = new HashMap<>();
         char lc = 'a', up = 'A';
         int magic_numb = 26;
         for (int i = 1; i <= magic_numb; i++) {
-            this.priorityMap.put(lc++, i);
-            this.priorityMap.put(up++, i + magic_numb);
+            priorityMap.put(lc++, i);
+            priorityMap.put(up++, i + magic_numb);
         }
     }
 
@@ -86,6 +85,21 @@ public class CrazyRucksacks implements AoC {
         return tripleRucksackSum;
     }
 
+    public void operate() {
+        for (String s : rucksack) {
+            int half = s.length() / 2;
+            singleRucksackSum += searchForItem(
+                    s.substring(0, half).toCharArray(),
+                    s.substring(half).toCharArray());
+        }
+        for (int i = 0; i < rucksack.size(); i++) {
+            tripleRucksackSum += searchForItem(
+                    rucksack.get(i).toCharArray(),
+                    rucksack.get(++i).toCharArray(),
+                    rucksack.get(++i).toCharArray());
+        }
+    }
+
     @Override
     public int getResultPart1() {
         return getSingleRucksackSum();
@@ -96,18 +110,8 @@ public class CrazyRucksacks implements AoC {
         return getTripleRucksackSum();
     }
 
-    public void operate() {
-        for (String s : rucksack) {
-            int half = s.length() / 2;
-            this.singleRucksackSum += searchForItem(
-                    s.substring(0, half).toCharArray(),
-                    s.substring(half).toCharArray());
-        }
-        for (int i = 0; i < rucksack.size(); i++) {
-            tripleRucksackSum += searchForItem(
-                    rucksack.get(i).toCharArray(),
-                    rucksack.get(++i).toCharArray(),
-                    rucksack.get(++i).toCharArray());
-        }
+    @Override
+    public void execute() {
+        operate();
     }
 }

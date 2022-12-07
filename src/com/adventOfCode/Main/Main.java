@@ -1,32 +1,20 @@
 package com.adventOfCode.Main;
 
+import com.adventOfCode.Modules.View;
 import com.adventOfCode.day1.Calorie;
 import com.adventOfCode.day2.RockPaperScissors;
 import com.adventOfCode.day3.CrazyRucksacks;
+import com.adventOfCode.day4.Camp;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         System.out.println("\nAdvent of Code 2022 - ANSWERS \n");
 
-        Calorie calorie= new Calorie();
-        calorie.operate();
-        System.out.println("Day 1: Calorie Counting:" +
-                "\n\tpart 1: " + calorie.getResultPart1() +
-                "\n\tpart 2: " + calorie.getResultPart2());
-
-        RockPaperScissors rockPaperScissors = new RockPaperScissors();
-        rockPaperScissors.operate();
-        System.out.println("Day 2: Rock Paper Scissors:" +
-                "\n\tpart 1: " + rockPaperScissors.getResultPart1() +
-                "\n\tpart 2: " + rockPaperScissors.getResultPart2());
-
-        CrazyRucksacks crazyRucksacks = new CrazyRucksacks();
-        crazyRucksacks.operate();
-        System.out.println("Day 3: Rucksack Reorganization:" +
-                "\n\tpart 1: " + crazyRucksacks.getResultPart1() +
-                "\n\tpart 2: " + crazyRucksacks.getResultPart2());
-
+        new View(new Calorie()).write();
+        new View(new RockPaperScissors()).write();
+        new View(new CrazyRucksacks()).write();
+        new View(new Camp()).write();
     }
 }

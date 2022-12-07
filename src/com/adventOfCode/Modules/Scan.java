@@ -1,4 +1,4 @@
-package com.adventOfCode.Moduls;
+package com.adventOfCode.Modules;
 
 import java.io.File;
 import java.io.FileNotFoundException;

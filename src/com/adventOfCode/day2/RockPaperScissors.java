@@ -1,10 +1,9 @@
 package com.adventOfCode.day2;
 
-import com.adventOfCode.Moduls.AoC;
-import com.adventOfCode.Moduls.Scan;
+import com.adventOfCode.Modules.AoC;
+import com.adventOfCode.Modules.Scan;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.*;
 
 public class RockPaperScissors implements AoC {
@@ -15,11 +14,11 @@ public class RockPaperScissors implements AoC {
     private int properSum;
 
     public RockPaperScissors() throws FileNotFoundException {
-        this.solutionMap = encryptSolution();
-        this.properSolutionMap = encryptProperSolution();
-        this.strategy = new Scan(this.getClass()).createFileList();
-        this.sum = 0;
-        this.properSum = 0;
+        solutionMap = encryptSolution();
+        properSolutionMap = encryptProperSolution();
+        strategy = new Scan(this.getClass()).createFileList();
+        sum = 0;
+        properSum = 0;
     }
 
     private Map<String, Integer> encryptProperSolution() {
@@ -51,11 +50,18 @@ public class RockPaperScissors implements AoC {
     }
 
     private int getSum() {
-        return this.sum;
+        return sum;
     }
 
     private int getProperSum() {
-        return this.properSum;
+        return properSum;
+    }
+
+    public void operate() {
+        for (String s : strategy) {
+            sum += solutionMap.get(s);
+            properSum += properSolutionMap.get(s);
+        }
     }
 
     @Override
@@ -68,10 +74,8 @@ public class RockPaperScissors implements AoC {
         return getProperSum();
     }
 
-    public void operate() {
-        for (String s : strategy) {
-            this.sum += solutionMap.get(s);
-            this.properSum += properSolutionMap.get(s);
-        }
+    @Override
+    public void execute() {
+        operate();
     }
 }
