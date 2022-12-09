@@ -17,6 +17,14 @@ public class Scan {
         this.scanner = new Scanner(new File("src\\files\\" + c.getPackageName().split("[.]")[2] + ".txt"));
     }
 
+    public String createFileString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        while (scanner.hasNextLine()) {
+            stringBuilder.append(scanner.nextLine());
+        }
+        return stringBuilder.toString();
+    }
+
     public List<String> createFileList() {
         List<String> list = new ArrayList<>();
         while (scanner.hasNextLine()) {
