@@ -23,13 +23,6 @@ public class View {
                 "\n\tpart 2: " + aoc.getResultPart2());
     }
 
-    public void write(AoC aoc, String title) {
-        aoc.execute();
-        System.out.println(title +
-                "\n\tpart 1: " + aoc.getResultPart1() +
-                "\n\tpart 2: " + aoc.getResultPart2());
-    }
-
     private void setTitle() throws IOException {
         Document document = Jsoup.connect("https://adventofcode.com/2022/day/" + dayNumb).get();
         String unpolishedTitle = document.select("article.day-desc > h2").toString();

@@ -67,12 +67,12 @@ public class Calorie implements AoC {
     }
 
     @Override
-    public int getResultPart1() {
+    public Object getResultPart1() {
         return getMaxValue();
     }
 
     @Override
-    public int getResultPart2() {
+    public Object getResultPart2() {
         return getSumOfSums();
     }
 

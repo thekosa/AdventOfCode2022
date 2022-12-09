@@ -65,12 +65,12 @@ public class RockPaperScissors implements AoC {
     }
 
     @Override
-    public int getResultPart1() {
+    public Object getResultPart1() {
         return getSum();
     }
 
     @Override
-    public int getResultPart2() {
+    public Object getResultPart2() {
         return getProperSum();
     }
 

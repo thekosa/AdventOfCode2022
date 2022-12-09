@@ -13,8 +13,8 @@ public class Camp implements AoC {
     private int numbOverlapPairs;
 
     public Camp() throws FileNotFoundException {
-        this.idNumbs = new Scan(this.getClass()).createFileList();
-        this.numbFullyContainPairs = 0;
+        idNumbs = new Scan(this.getClass()).createFileList();
+        numbFullyContainPairs = 0;
     }
 
     private boolean areSectionsFullyContain(SectionsSet set1, SectionsSet set2) {
@@ -63,12 +63,12 @@ public class Camp implements AoC {
     }
 
     @Override
-    public int getResultPart1() {
+    public Object getResultPart1() {
         return getNumbFullyContainPairs();
     }
 
     @Override
-    public int getResultPart2() {
+    public Object getResultPart2() {
         return getNumbOverlapPairs();
     }
 }

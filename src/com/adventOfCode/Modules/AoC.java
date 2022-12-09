@@ -1,9 +1,9 @@
 package com.adventOfCode.Modules;
 
 public interface AoC {
-    public int getResultPart1();
+    Object getResultPart1();
 
-    public int getResultPart2();
+    Object getResultPart2();
 
-    public void execute();
+    void execute();
 }
