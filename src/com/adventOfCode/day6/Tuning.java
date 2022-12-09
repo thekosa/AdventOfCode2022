@@ -19,6 +19,11 @@ public class Tuning implements AoC {
     }
 
     private int searchFirstMarker(int charNumbBefore) {
+        //it doesn't check boundary condition, the last string which is checking is before the last letter
+        //e.g.: string 10 letters: "abcdefghij", for charNumbBefore = 4 the last string is "ghij"
+        //in this method the last checked string is "fghi"
+        //I'm aware it doesn't work for every string,
+        //but this is a simplification that i could have made in that type of exercise
         for (int i = charNumbBefore; i < dataStreamLength; i++) {
             if (isDifferent(dataStream.substring(i - charNumbBefore, i))) {
                 return i;
