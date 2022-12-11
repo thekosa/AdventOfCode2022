@@ -7,6 +7,7 @@ import com.adventOfCode.day3.CrazyRucksacks;
 import com.adventOfCode.day4.Camp;
 import com.adventOfCode.day5.SillyStacks;
 import com.adventOfCode.day6.Tuning;
+import com.adventOfCode.day7.ElvesFileSystem;
 
 import java.io.IOException;
 
@@ -20,5 +21,6 @@ public class Main {
         new View(new Camp()).write();
         new View(new SillyStacks()).write();
         new View(new Tuning()).write();
+        new View(new ElvesFileSystem()).write();
     }
 }
