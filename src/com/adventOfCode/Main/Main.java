@@ -8,6 +8,7 @@ import com.adventOfCode.day4.Camp;
 import com.adventOfCode.day5.SillyStacks;
 import com.adventOfCode.day6.Tuning;
 import com.adventOfCode.day7.ElvesFileSystem;
+import com.adventOfCode.day8.TallTreesForest;
 
 import java.io.IOException;
 
@@ -22,5 +23,6 @@ public class Main {
         new View(new SillyStacks()).write();
         new View(new Tuning()).write();
         new View(new ElvesFileSystem()).write();
+        new View(new TallTreesForest()).write();
     }
 }

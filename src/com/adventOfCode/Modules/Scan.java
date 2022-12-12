@@ -17,6 +17,18 @@ public class Scan {
         this.scanner = new Scanner(new File("src\\files\\" + c.getPackageName().split("[.]")[2] + ".txt"));
     }
 
+    public int[][] createFileIntMatrix() {
+        List<String> tempList = createFileList();
+        scanner.reset();
+        int[][] matrix = new int[tempList.get(1).length()][tempList.size()];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = tempList.get(i).toCharArray()[j] - '0';
+            }
+        }
+        return matrix;
+    }
+
     public String createFileString() {
         StringBuilder stringBuilder = new StringBuilder();
         while (scanner.hasNextLine()) {
