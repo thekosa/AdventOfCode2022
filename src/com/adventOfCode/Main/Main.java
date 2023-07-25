@@ -2,6 +2,7 @@ package com.adventOfCode.Main;
 
 import com.adventOfCode.Modules.View;
 import com.adventOfCode.day1.Calorie;
+import com.adventOfCode.day10.CPU;
 import com.adventOfCode.day2.RockPaperScissors;
 import com.adventOfCode.day3.CrazyRucksacks;
 import com.adventOfCode.day4.Camp;
@@ -26,5 +27,6 @@ public class Main {
         new View(new ElvesFileSystem()).write();
         new View(new TallTreesForest()).write();
         new View(new RopeBridge()).write();
+        new View(new CPU()).write();
     }
 }
