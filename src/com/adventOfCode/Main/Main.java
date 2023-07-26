@@ -2,7 +2,6 @@ package com.adventOfCode.Main;
 
 import com.adventOfCode.Modules.View;
 import com.adventOfCode.day1.Calorie;
-import com.adventOfCode.day10.CPU;
 import com.adventOfCode.day2.RockPaperScissors;
 import com.adventOfCode.day3.CrazyRucksacks;
 import com.adventOfCode.day4.Camp;
@@ -11,6 +10,7 @@ import com.adventOfCode.day6.Tuning;
 import com.adventOfCode.day7.ElvesFileSystem;
 import com.adventOfCode.day8.TallTreesForest;
 import com.adventOfCode.day9.RopeBridge;
+import com.adventOfCode.day10.CPU;
 
 import java.io.IOException;
 
