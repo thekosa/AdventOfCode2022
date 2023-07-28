@@ -1,8 +1,8 @@
 package com.adventOfCode.day10;
 
+import com.AdventOfCode.primitive.OCR.OCR;
 import com.adventOfCode.Modules.AoC;
 import com.adventOfCode.Modules.Scan;
-import com.adventOfCode.day10.OCR.OCR;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

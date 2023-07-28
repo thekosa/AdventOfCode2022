@@ -19,6 +19,11 @@
             <artifactId>jsoup</artifactId>
             <version>1.15.3</version>
         </dependency>
+        <dependency>
+            <groupId>com.adventofcode.primitive.OCR</groupId>
+            <artifactId>adventofcode-ocr</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 
