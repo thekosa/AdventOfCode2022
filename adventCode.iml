@@ -10,5 +10,6 @@
     <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.15.3" level="project" />
     <orderEntry type="library" name="Maven: com.adventofcode.primitive.OCR:adventofcode-ocr:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.adventofcode.primitive.OCR:adventofcode-ocr:1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.adventofcode.primitive.OCR:adventofcode-ocr:1.2" level="project" />
   </component>
 </module>
