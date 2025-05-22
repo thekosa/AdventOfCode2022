@@ -22,7 +22,7 @@
         <dependency>
             <groupId>com.adventofcode.primitive.OCR</groupId>
             <artifactId>adventofcode-ocr</artifactId>
-            <version>1.2</version>
+            <version>1.3</version>
         </dependency>
     </dependencies>
 
